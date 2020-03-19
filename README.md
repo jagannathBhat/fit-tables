@@ -22,10 +22,16 @@ Initially, this project will be built to generate time tables for Adi Shankara I
 
 ## Constraints
 
-1. A teacher cannot have more than one subject at the same time.
-2. Lab subjects should be 3 hours long.
-3. A subject must be conducted for atleast 4 times a week.
-4. A subject cannot repeat for more than 5 times a week.
+- Hard Constraints
+
+   1. Lab subjects should be 3 hours long. 
+   2. A teacher cannot have more than one subject at the same time.
+   3. Minimum limit for a subject to occur in a week is 4. Maximum is 5.
+
+- Soft Constraints
+
+   1. All the faculties must atleast take more than 7 periods a week.
+   2. A faculty must not have 2 consecutive periods for 2 different batches
 
 ## Population
 
