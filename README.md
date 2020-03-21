@@ -20,6 +20,19 @@ A web app that generates Time Tables using a Genetic Algorithm.
 
 1. A teacher cannot have more than one subject at the same time.
 
+## Constraints specific to ASIET
+
+- Hard Constraints
+
+  1. Lab subjects should be 3 hours long.
+  2. A teacher cannot have more than one subject at the same time.
+  3. The minimum limit for a subject to occur in a week is 4. The maximum is 5.
+
+- Soft Constraints
+
+  1. All the faculties must at least take more than 7 periods a week.
+  2. A faculty must not have 2 consecutive periods for 2 different batches
+
 ## Population
 
 The population will be the required time table. The chromosomes are each hour in the time table. The chromosome will be in the following format.
