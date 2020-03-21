@@ -1,27 +1,298 @@
 {
 	"batches": [
 		{
-			"name": "s4 cs",
+			"name": "s4 csa",
 			"subjects": [
 				{
-					"name": "oodp",
-					"teachers": ["rrm"]
-				},
-				{
-					"name": "os",
-					"teachers": ["rmv", "gpm"]
+					"name": "be",
+					"teachers": ["gtr"],
+					"min": 4,
+					"max": 5,
+					"step": 1
 				},
 				{
 					"name": "coa",
-					"teachers": ["tg"]
+					"teachers": ["tg"],
+					"min": 4,
+					"max": 5,
+					"step": 1
 				},
 				{
 					"name": "maths",
-					"teachers": ["jvp"]
+					"teachers": ["jvp"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "oodp",
+					"teachers": ["rrm"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "os",
+					"teachers": ["rmv"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "pdd",
+					"teachers": ["ib"],
+					"min": 4,
+					"max": 5,
+					"step": 1
 				},
 				{
 					"name": "lab",
-					"teachers": ["rrm", "gvm", "rmv", "ns"]
+					"teachers": ["rrm", "gvm", "rmv", "ns"],
+					"min": 6,
+					"max": 6,
+					"step": 3
+				}
+			]
+		},
+		{
+			"name": "s4 csb",
+			"subjects": [
+				{
+					"name": "be",
+					"teachers": ["gtr"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "coa",
+					"teachers": ["sms"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "maths",
+					"teachers": ["tgj"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "oodp",
+					"teachers": ["rrm"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "os",
+					"teachers": ["art"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "pdd",
+					"teachers": ["dg"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "lab",
+					"teachers": ["sms", "ib", "sm", "an"],
+					"min": 6,
+					"max": 6,
+					"step": 3
+				}
+			]
+		},
+		{
+			"name": "s6 cs",
+			"subjects": [
+				{
+					"name": "cd",
+					"teachers": ["ukn"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "cn",
+					"teachers": ["aj"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "daa",
+					"teachers": ["skm"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "lab",
+					"teachers": ["dg", "aj", "tg", "art"],
+					"min": 6,
+					"max": 6,
+					"step": 3
+				},
+				{
+					"name": "pom",
+					"teachers": ["lcl"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "sepm",
+					"teachers": ["mti"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "wt",
+					"teachers": ["vp"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				}
+			]
+		},
+		{
+			"name": "s6 it",
+			"subjects": [
+				{
+					"name": "cd",
+					"teachers": ["nkn"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "dm",
+					"teachers": ["dks"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "ds",
+					"teachers": ["gvm"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "lab",
+					"teachers": ["rr", "sm", "st", "js"],
+					"min": 6,
+					"max": 6,
+					"step": 3
+				},
+				{
+					"name": "pom",
+					"teachers": ["gtr"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "spm",
+					"teachers": ["aj"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "wt",
+					"teachers": ["vp"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				}
+			]
+		},
+		{
+			"name": "s8 cs",
+			"subjects": [
+				{
+					"name": "dmw",
+					"teachers": ["st"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "ele",
+					"teachers": ["jg", "suv"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "es",
+					"teachers": ["sm"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "ge",
+					"teachers": ["sos", "na"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "project",
+					"teachers": ["mti", "abv", "rr"],
+					"min": 15,
+					"max": 15,
+					"step": 3
+				}
+			]
+		},
+		{
+			"name": "s8 it",
+			"subjects": [
+				{
+					"name": "cns",
+					"teachers": ["dmp"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "ge",
+					"teachers": ["hn"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "da",
+					"teachers": ["rr"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "ele",
+					"teachers": ["gvm", "dks"],
+					"min": 4,
+					"max": 5,
+					"step": 1
+				},
+				{
+					"name": "project",
+					"teachers": ["dg", "dmp", "dks", "abv"],
+					"min": 15,
+					"max": 15,
+					"step": 3
 				}
 			]
 		}
