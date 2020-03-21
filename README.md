@@ -1,10 +1,6 @@
 # fit-tables
 
-Algorithm to generate Time Tables using a Genetic Algorithm.
-
-## MVP
-
-Initially, this project will be built to generate time tables for Adi Shankara Institute of Engineering and Technology, Kalady (the institution at which the collaborators of this project are studying).
+A web app that generates Time Tables using a Genetic Algorithm.
 
 ## Entities
 
@@ -23,9 +19,6 @@ Initially, this project will be built to generate time tables for Adi Shankara I
 ## Constraints
 
 1. A teacher cannot have more than one subject at the same time.
-2. Lab subjects should be 3 hours long.
-3. A subject must be conducted for atleast 4 times a week.
-4. A subject cannot repeat for more than 5 times a week.
 
 ## Population
 
@@ -37,13 +30,38 @@ _Refer this [page](https://www.tutorialspoint.com/genetic_algorithms/genetic_alg
 
 ## Algorithm
 
-1. Get batch details, subject details and teachers' details.
-2. Create population matrix where no. of rows is given by
+1. Get batch details, subject details, and teachers' details.
 
-   no. of batches \* no. of days \* no. hours
+   - Batch details include the name of the batch.
+   - Subject details include the name of the subject, minimum and maximum times it should be taken in a week, and how many hours does it take.
+   - Teachers' details include the names of the teachers.
 
-3. Populate the matrix with each element containing [Batch, Subject, Teacher] chromosomes.
-4. Check for conflicts.
-5. If there are no conflicts, exit.
-6. Change subject or teacher of the chrmosomes with conflicts.
-7. Goto step 4.
+   ```json
+   {
+   	"batches": [
+   		{
+   			"name": "batch name",
+   			"subjects": [
+   				{
+   					"name": "subject name",
+   					"teachers": ["teacher name", "teacher name"],
+   					"min": 0,
+   					"max": 0,
+   					"step": 0
+   				}
+   			]
+   		}
+   	]
+   }
+   ```
+
+2. Create the population matrix with dimensions \[no of batches \* no of days \* no of hours per day\]\[3\].
+3. Repeat the following for a limited number of iterations.
+   1. Populate the matrix randomly with each element containing [Batch, Subject, Teacher] chromosomes within the minimum and maximum limits of the subjects.
+   2. Check for conflicts.
+   3. Repeat the following for a limited number of iterations.
+      1. Try changing the teacher of the subjects with conflicts.
+      2. Try swapping two subjects with conflicts in the same batch.
+      3. Try swapping one subject with conflict with the adjacent subject.
+      4. If there are no conflicts, exit both loops.
+4. Print the population matrix as a time table.
