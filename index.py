@@ -157,7 +157,11 @@ if __name__ == '__main__':
         mutatePopulation()
         if checkCompletion():
             break
-    for i in range(len(population)):
-        population[i].pop()
-    with open('timetable.json', 'w') as json_file:
-        json.dump({'timetable': population}, json_file)
+    if checkCompletion():
+        for i in range(len(population)):
+            population[i].pop()
+        with open('timetable.json', 'w') as json_file:
+            json.dump({'timetable': population}, json_file)
+        print('generated')
+    else:
+        print('failed')
