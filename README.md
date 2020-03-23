@@ -2,6 +2,16 @@
 
 A web app that generates Time Tables using a Genetic Algorithm.
 
+## How to run
+
+Assuming you have Python3, Pip and Node and NPM installed. Run the following commands.
+
+```bash
+npm run install
+npm run build
+npm start
+```
+
 ## Entities
 
 1. Batch
