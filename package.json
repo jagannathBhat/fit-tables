@@ -1,0 +1,31 @@
+{
+	"name": "fit-tables",
+	"version": "1.0.0",
+	"description": "A web app that generates Time Tables using a Genetic Algorithm.",
+	"main": "index.py",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"build": "npm run build --prefix client",
+		"install": "pip install -r requirements.txt && npm install --prefix client",
+		"start": "python3 index.py"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hexifytechnologies/fit-tables.git"
+	},
+	"keywords": [
+		"time",
+		"table",
+		"generator",
+		"genetic",
+		"algorithm"
+	],
+	"author": "Jagannath Bhat",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/hexifytechnologies/fit-tables/issues"
+	},
+	"homepage": "https://github.com/hexifytechnologies/fit-tables#readme"
+}
