@@ -23,7 +23,7 @@
 		"algorithm"
 	],
 	"author": "Jagannath Bhat",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/hexifytechnologies/fit-tables/issues"
 	},
