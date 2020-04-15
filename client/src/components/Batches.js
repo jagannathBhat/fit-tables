@@ -11,6 +11,7 @@ import {
 	loadData,
 	newBatch,
 	renameCurrentBatch,
+	saveBatch,
 } from '../actions/batchActions'
 
 const Batches = ({
@@ -21,6 +22,7 @@ const Batches = ({
 	loadData,
 	newBatch,
 	renameCurrentBatch,
+	saveBatch,
 }) => {
 	useEffect(() => {
 		const func = async () => {
@@ -43,6 +45,17 @@ const Batches = ({
 				<Typography variant='h4' component='h2'>
 					Batches
 				</Typography>
+				<Button
+					variant='contained'
+					size='large'
+					color='primary'
+					className={classes.buttons}
+					onClick={() => {
+						saveBatch(batches)
+					}}
+				>
+					Save
+				</Button>
 				<div>
 					{batches.map((batch, key) => (
 						<Button
@@ -130,6 +143,7 @@ Batches.propTypes = {
 	loadData: PropTypes.func.isRequired,
 	newBatch: PropTypes.func.isRequired,
 	renameCurrentBatch: PropTypes.func.isRequired,
+	saveBatch: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
@@ -142,4 +156,5 @@ export default connect(mapStateToProps, {
 	loadData,
 	newBatch,
 	renameCurrentBatch,
+	saveBatch,
 })(Batches)

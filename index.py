@@ -205,6 +205,14 @@ def respondLoad():
     return {'b': batches, 't': timetable}
 
 
+@app.route('/save', methods=['POST'])
+def respondSave():
+    data = json.loads(request.data)
+    with open('inputData.json', 'w') as outfile:
+        json.dump(data, outfile)
+    return {'msg': 'Saved'}
+
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):

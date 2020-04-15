@@ -20,7 +20,6 @@ export const deleteCurrentBatch = () => async dispatch =>
 
 export const loadData = () => async dispatch => {
 	const res = await axios.get('/load')
-	console.log(res.data.b)
 	dispatch({
 		type: LOAD_BATCH,
 		payload: res.data.b,
@@ -38,3 +37,13 @@ export const renameCurrentBatch = name => async dispatch =>
 		type: RENAME_CURRENT_BATCH,
 		payload: name,
 	})
+
+export const saveBatch = data => async dispatch => {
+	try {
+		const config = { headers: { 'Content-Type': 'application/json' } }
+		const res = await axios.post('/save', { batches: data }, config)
+		if (res.data.msg === 'Saved') alert('Saved')
+	} catch (err) {
+		console.error(err)
+	}
+}
