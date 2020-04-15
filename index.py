@@ -175,6 +175,9 @@ def generate(data):
                         index += 1
                     batch['classes'].append(day)
                 timetable.append(batch)
+            final = {'timetable': timetable}
+            with open('timetable.json', 'w') as outfile:
+                json.dump(final, outfile)
             return {'timetable': timetable}
         else:
             return {'msg': 'failed'}
@@ -187,7 +190,19 @@ app = Flask(__name__, static_folder='client/build')
 
 @app.route('/generate', methods=['POST'])
 def respondGenerate():
-    return generate(json.loads(request.data))
+    data = json.loads(request.data)
+    with open('inputData.json', 'w') as outfile:
+        json.dump(data, outfile)
+    return generate(data)
+
+
+@app.route('/load', methods=['GET'])
+def respondLoad():
+    with open('inputData.json') as json_file:
+        batches = json.load(json_file)
+    with open('timetable.json') as json_file:
+        timetable = json.load(json_file)
+    return {'b': batches, 't': timetable}
 
 
 @app.route('/', defaults={'path': ''})
