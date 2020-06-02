@@ -15,6 +15,7 @@ def generate(data):
     population = []
 
     def changeTeachers():
+        mutationCount = 0
         for (i, chromosome) in enumerate(population):
             if chromosome[3] > 0:
                 batch = next(
@@ -24,10 +25,12 @@ def generate(data):
                         (subject for subject in batch["subjects"] if subject["name"] == chromosome[1]), None)
                     if subject != None:
                         if len(subject["teachers"]) > 1:
+                            mutationCount += 1
                             j = 0
                             while population[i][2] == subject["teachers"][j]:
                                 j = randrange(len(subject["teachers"]))
                             population[i][2] = subject["teachers"][j]
+        return mutationCount
 
     def checkCompletion():
         for chromosome in population:
@@ -44,18 +47,22 @@ def generate(data):
                 population[i + j * noTotalHours][3] = hour.count(hour[j]) - 1
 
     def exchangeConflicts():
+        crossoverCount = 0
         populationConflicts = []
         for (i, chromosome) in enumerate(population):
             if chromosome[3] > 0:
                 populationConflicts.append([i, population[i]])
         for i in range(len(populationConflicts) - 1):
             if populationConflicts[i][1][0] == populationConflicts[i + 1][1][0]:
+                crossoverCount += 1
                 temp = population[populationConflicts[i][0]]
                 population[populationConflicts[i][0]
                            ] = population[populationConflicts[i + 1][0]]
                 population[populationConflicts[i + 1][0]] = temp
+        return crossoverCount
 
     def exchangeSubjects():
+        mutationCount = 0
         for (i, chromosome) in enumerate(population[:-2]):
             if chromosome[3] > 0:
                 for j in range(i + noTotalHours, len(population), noTotalHours):
@@ -63,6 +70,7 @@ def generate(data):
                         k = j + 1
                         if population[i][2] == population[i+1][2] or population[k][3] > 0:
                             k += 1
+                        mutationCount += 1
                         temp = population[j]
                         population[j] = population[k]
                         population[k] = temp
@@ -71,6 +79,7 @@ def generate(data):
             temp = population[-1]
             population[-1] = population[-2]
             population[-2] = temp
+        return mutationCount
 
     def initiatePopulation():
         i = 0
@@ -127,19 +136,25 @@ def generate(data):
                 noAvailable -= 1
 
     def loadBatches(url):
-        with open('data.json') as f:
+        with open(url) as f:
             fileData = json.load(f)
         return fileData["batches"]
 
     def mutatePopulation():
+        crossoverCount = 0
+        mutationCount = 0
         for _ in range(5):
-            changeTeachers()
+            mutationCount += changeTeachers()
             checkForConflicts()
-            exchangeConflicts()
+            crossoverCount += exchangeConflicts()
             checkForConflicts()
-            exchangeSubjects()
+            mutationCount += exchangeSubjects()
             checkForConflicts()
             if checkCompletion():
+                print('\n\nCrossover percentage: ' +
+                      str(crossoverCount / (crossoverCount + mutationCount) * 100) + '%')
+                print('Mutation percentage: ' +
+                      str(mutationCount / (crossoverCount + mutationCount) * 100) + '%')
                 break
 
     try:
