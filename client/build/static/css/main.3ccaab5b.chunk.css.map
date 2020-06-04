@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,gBAGC,cAAe,CACf,WAAY,CACZ,QAAW,CACX,UACD","file":"main.3ccaab5b.chunk.css","sourcesContent":["html,\nbody,\n#root {\n\tcursor: default;\n\theight: 100%;\n\tmargin: 0px;\n\twidth: 100%;\n}\n"]}
